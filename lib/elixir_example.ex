@@ -15,4 +15,10 @@ defmodule ElixirExample do
   def hello do
     :world
   end
+
+  def timed(fun, args) do
+    {time, result} = :timer.tc(fun, args)
+    IO.puts("Time: #{time} microsec")
+    IO.puts("Result: #{result}")
+  end
 end
